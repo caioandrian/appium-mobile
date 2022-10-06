@@ -3,6 +3,6 @@ local.log
 errorShots
 .DS_Store
 webdriverio-report
-allure-results
+test/allure-results
 test/allure-report
 test/report-videos
