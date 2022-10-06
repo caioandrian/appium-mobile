@@ -2,7 +2,7 @@ node_modules/
 local.log
 errorShots
 .DS_Store
-test/allure-results
+webdriverio-report
+allure-results
 test/allure-report
 test/report-videos
-webdriverio-report
