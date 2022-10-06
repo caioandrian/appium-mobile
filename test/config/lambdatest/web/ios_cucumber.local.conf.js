@@ -1,0 +1,38 @@
+const { config: baseConfig } = require('../wdio.cucumber.shared.conf');
+
+baseConfig.cucumberOpts.require = ['./web/e2e/steps_definitions/google.steps.js'];
+
+const localConfig = {
+  specs: ['./web/e2e/spec/google.feature'],
+  //baseUrl: 'https://google.com/',
+
+  capabilities : [{
+    "deviceName": "iPhone XS",
+    'platformVersion': "12.0",
+    "platformName": "ios",
+    "build": 'Webdriverio IOS Project',
+    "name": 'Navegador - Google',
+    'nativeWebScreenshot': true,
+    "newCommandTimeout": 300,
+    //'console': true,
+    //"visual": true,
+    //"video": true,
+    //'isRealMobile': true,
+    //'autoGrantPermissions': true,
+    //'autoAcceptAlerts': true,
+    
+    //C:\Tunnel_labdatest\bin>
+    //LT  --user caioautomacaoqa@gmail.com --key mbLvWreVUusrH0obOPPeIWDQzSlYhrgy8qikRM7stQyNEvR4SC --tunnelName teste-edtech
+    "tunnel" : true
+  }],
+
+  /*beforeSession: function (config, capabilities, specs) {
+    capabilities.name=specs[0].split(/(\\|\/)/g).pop() || undefined;
+  },*/
+
+  after: function (result, capabilities, specs) {
+    driver.execute("lambda-status=".concat(result==0?"passed":"failed"),undefined);
+  }
+};
+
+exports.config = { ...baseConfig, ...localConfig };

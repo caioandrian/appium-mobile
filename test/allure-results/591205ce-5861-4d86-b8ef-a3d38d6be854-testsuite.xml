@@ -1,0 +1,83 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1665093345181' stop='1665093366590'>
+    <name>Visitar Google</name>
+    <title>Visitar Google</title>
+    <test-cases>
+        <test-case start='1665093345270' status='passed' stop='1665093354105'>
+            <name>Validar Logo</name>
+            <title>Validar Logo</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Nexus 5X 11-11'/>
+            </parameters>
+            <steps>
+                <step start='1665093345272' status='passed' stop='1665093351354'>
+                    <name>Dado que tenha acessado na home do google</name>
+                    <title>Dado que tenha acessado na home do google</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1665093351354' status='passed' stop='1665093354104'>
+                    <name>Então deverá ter aparecido a logo do google</name>
+                    <title>Então deverá ter aparecido a logo do google</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='cbb5838c-61fe-40ef-aa6d-cfa11431ffde-attachment.png' type='image/png' size='69859'/>
+                        <attachment title='Screenshot' source='f2f743ce-7a3c-4e63-bb49-01cfabe9d937-attachment.png' type='image/png' size='66679'/>
+                        <attachment title='Screenshot' source='22703ff5-7f21-4c28-ae96-0c54cb8ed51f-attachment.png' type='image/png' size='135365'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1665093354107' status='passed' stop='1665093366589'>
+            <name>Validar pesquisa</name>
+            <title>Validar pesquisa</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='device' value='Nexus 5X 11-11'/>
+            </parameters>
+            <steps>
+                <step start='1665093354108' status='passed' stop='1665093356015'>
+                    <name>Dado que tenha acessado na home do google</name>
+                    <title>Dado que tenha acessado na home do google</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='4f699dd8-2ed1-44e1-872e-beb1a7956072-attachment.png' type='image/png' size='70169'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1665093356015' status='passed' stop='1665093358899'>
+                    <name>Quando fizer uma pesquisa pelo campo de pesquisar</name>
+                    <title>Quando fizer uma pesquisa pelo campo de pesquisar</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='decea025-61fe-4fff-898f-becd4b250fa9-attachment.png' type='image/png' size='66990'/>
+                        <attachment title='Screenshot' source='4ceac2db-e45c-4210-836c-cb8ae07b930a-attachment.png' type='image/png' size='66990'/>
+                        <attachment title='Screenshot' source='27c41bc3-a941-4736-9adb-6b42806accd8-attachment.png' type='image/png' size='135452'/>
+                        <attachment title='Screenshot' source='917748df-2afd-4254-b4cd-73437e69cd22-attachment.png' type='image/png' size='127815'/>
+                        <attachment title='Screenshot' source='c06f7ed3-a2d6-4e77-b8af-7dc651bf9aa4-attachment.png' type='image/png' size='120223'/>
+                        <attachment title='Screenshot' source='bd1144ff-5c09-4428-991e-6fe3446a846e-attachment.png' type='image/png' size='120168'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1665093358899' status='passed' stop='1665093366588'>
+                    <name>Então deverá apresentar os resultados</name>
+                    <title>Então deverá apresentar os resultados</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='e3ef0ebd-321b-49d9-ad63-58cae8bbb0a3-attachment.png' type='image/png' size='63360'/>
+                        <attachment title='Screenshot' source='9272c46b-81a1-437d-a3b1-81afe843cb7f-attachment.png' type='image/png' size='105721'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
