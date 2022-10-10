@@ -60,14 +60,14 @@ exports.config = {
     },
     maxInstances: 1,
 
-    before: () => {
-        rimraf.sync('./report-videos/*')
+    before: async () => {
+        await rimraf.sync('./report-videos/*')
 
-        browser.overwriteCommand('click', function (origClickFunction, { force = false } = {}) {
+        browser.overwriteCommand('click', async function (origClickFunction, { force = false } = {}) {
             if (!force) {
                 try {
                     // attempt to click
-                    origClickFunction()
+                    await origClickFunction()
                     return null
                 } catch (err) {
                     if (err.message.includes('not clickable at point')) {
@@ -75,54 +75,55 @@ exports.config = {
                             'Scrolling to it before clicking again.')
         
                         // scroll to element and click again
-                        return origClickFunction()
+                        return await origClickFunction()
                     }
                     throw err
                 }
             }
         
-            browser.execute((el) => {
-                el.click()
+            await browser.execute( async (el) => {
+                await el.click()
             }, this)
         }, true) // don't forget to pass `true` as 3rd argument
     },
 
-    onPrepare: () => {  
-        exec("rimraf allure-results && rimraf allure-report");
+    onPrepare: async () => {  
+        await exec("rimraf allure-results && rimraf allure-report");
     },
 
-    onComplete: function() {
+    onComplete: async function() {
         const reportError = new Error('Could not generate Allure report')
         const generation = allure(['generate', 'allure-results', '--clean'])
-        return new Promise( (resolve, reject) => {
+
+        return new Promise( async (resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
                 5000)
 
-            generation.on('exit', function(exitCode) {
-                clearTimeout(generationTimeout)
+            generation.on('exit', async function(exitCode) {
+                await clearTimeout(generationTimeout)
 
                 if (exitCode !== 0) {
-                    return reject(reportError)
+                    return await reject(reportError)
                 }
 
-                //await exec("allure open");
+                //await exec("allure");
 
                 console.log('Allure report successfully generated')
-                resolve()
-                rimraf.sync('*.zip')
+                await resolve()
+                await rimraf.sync('*.zip')
 
                 //limpar processo do appium
                 let nestat = "netstat -a -n -o ^| findstr :4723.*LISTENING"
-                exec(`FOR /F "tokens=5 delims= " %P IN ('${nestat}') DO TaskKill.exe /PID %P /T /F`);
+                await exec(`FOR /F "tokens=5 delims= " %P IN ('${nestat}') DO TaskKill.exe /PID %P /T /F`);
             })
             
         })
     },
 
-    afterStep: function (step, scenario, { error, duration, passed }, context) {
+    afterStep: async function (step, scenario, { error, duration, passed }, context) {
         if (scenario.error) {
-            browser.takeScreenshot();
+            await browser.takeScreenshot();
         }
     },
 
