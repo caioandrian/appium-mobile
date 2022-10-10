@@ -17,6 +17,7 @@ const testConfig = {
       platformVersion: "11",
       automationName: "UiAutomator2",
       deviceName: "Nexus 5X",
+      newCommandTimeout: 300,
       chromedriverExecutable: "C:\\chrome_driver\\chromedriver83_83.exe",
       //chromedriverExecutable: "./chromedriver83_83.exe",
       clearDeviceLogsOnStart: true
