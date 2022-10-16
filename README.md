@@ -122,6 +122,10 @@ Dentro as muitas vantagens, podemos destacar:
 <p>
 
 - **fixtures**: Arquivos de massas a serem usadas na automação, sendo estáticas ou dinâmicas.
+  - json (arquivos no formato json, txt, excel, etc)
+  - factory (classe para construção de massa de dados dinâmica)
+  - images
+  - mock (arquivos para serem utilizados sem necessidade de conexão com o banco de dados real)
 <p>
 
 - **Pages**: Representa abstração de páginas, com métodos e seus elementos. Fica definida  as seguintes convenções:
