@@ -10,20 +10,20 @@ Esta documentação tem como objetivo auxiliar na compreensão da arquitetura do
     - [Instalação Visual Studio Code](#instalação-visual-studio-code)
     - [Execução do Projeto](#execução-do-projeto)
       - [Extensões](#extensões)
-  - [Clean Code (Javascript)](#clean-code-javascript)
   - [Sobre Padrão Page Object](#sobre-padrão-page-object)
   - [Arquitetura do projeto e framework de automação](#arquitetura-do-projeto-e-framework-de-automação)
    
    
 ## Instalação e Execução do Projeto
 
-Para realizar nossa automação, usamos o Cypress que é um framework de automação de testes E2E que usa como base o Javascript para a escrita do seu código. Com ele é possível configurar, escrever, rodar e debuggar os testes de forma simples e prática.
+Para realizar nossa automação, usamos o Appium com Webdriverio que é um framework de automação de testes E2E que usa como base o Javascript para a escrita do seu código.
 
-Para utilizar o Cypress, é necessário realizar as seguintes instalações:
+Para executar o projeto, é necessário realizar as seguintes instalações:
 
 - NodeJs (versão LTS)
 - Visual Studio Code
-- Cypress
+- Appium
+- Android Studio
 
 ### Instalação NodeJs
 
@@ -50,7 +50,7 @@ O Visual Studio Code abrirá automaticamente e pronto.
 
 **1**. Dentro do VScode, abrir a pasta clonada, acessar a raiz do projeto e executar no terminal o comando ```npm install```;
 
-> Isso fará com que, na nossa estrutura de pastas, seja criado um _node_modules_ com várias dependências, incluindo o _cypress_.
+> Isso fará com que, na nossa estrutura de pastas, seja criado um _node_modules_ com várias dependências.
 
 **2**. A próxima etapa é executar o comando ``` npm run android-web:local-bdd-google```.
 
@@ -71,12 +71,6 @@ Abaixo seguem alguns plugins que nos auxiliam na nossa automação. São eles:
 - Snippets and Syntax Highlight for Gherkin (Cucumber)
 - Bracket Pair Colorizer 2
 - ES6 Mocha Snippets
-
-## Clean Code
-
-Nosso código deve seguir o máximo possível bons padrões de desenvolvimento, assim como qualquer script! :D 
-
-Para entender os principais princípios a serem adotados separamos uma seção específica de [CLEAN CODE](CLEAN_CODE.md). Boa leitura!
 
 ## Entendendo o Padrão Page Object 
 
